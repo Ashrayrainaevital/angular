@@ -4,18 +4,11 @@
     </div>
     <hr>
 </div>
+<!-- <app-recipes-item></app-recipes-item> -->
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix"
-        *ngFor="let Tst of test">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{Tst.name}}</h4>
-                <p class="list-group-item-text">{{Tst.description}}</p>
-                
-            </div>
-            <span class="pull-right">
-                <img [src]=Tst.imagPath alt="{{Tst.name}}" class="image-responsive" style="max-height:50px;">
-            </span>
-        </a>
+       <app-recipes-item *ngFor="let Tst of recipe"
+       (recipeSelected)="onrecipeSelected()"
+        [recipe]="recipe"></app-recipes-item>
     </div>
 </div>
